@@ -18,12 +18,12 @@
 
 # Download the WikiSplit data from:
 # https://github.com/google-research-datasets/wiki-split
-WIKISPLIT_DIR=/path/to/wiki-split
+WIKISPLIT_DIR=./wiki-split
 # Preprocessed data and models will be stored here.
-OUTPUT_DIR=/path/to/output
+OUTPUT_DIR=./wiki-split
 # Download the pretrained BERT model:
 # https://storage.googleapis.com/bert_models/2018_10_18/cased_L-12_H-768_A-12.zip
-BERT_BASE_DIR=/path/to/cased_L-12_H-768_A-12
+BERT_BASE_DIR=/home/share/zh/models/cased_L-12_H-768_A-12
 
 ### Optional parameters ###
 
@@ -31,7 +31,7 @@ BERT_BASE_DIR=/path/to/cased_L-12_H-768_A-12
 EXPERIMENT=wikisplit_experiment
 # To quickly test that model training works, set the number of epochs to a
 # smaller value (e.g. 0.01).
-NUM_EPOCHS=3.0
+NUM_EPOCHS=0.01
 BATCH_SIZE=64
 PHRASE_VOCAB_SIZE=500
 MAX_INPUT_EXAMPLES=1000000

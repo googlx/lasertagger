@@ -37,7 +37,8 @@ def get_token_list(text):
   Args:
     text: String to be split into tokens.
   """
-  return text.split()
+  # return text.split()
+  return list(text)  # 将中文转换为字符列表
 
 
 def yield_sources_and_targets(
