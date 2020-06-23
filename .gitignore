@@ -1,3 +1,6 @@
+output/reference/
+output/decoded/
+output/text/
 variables.data*
 model.ckpt*
 # Byte-compiled / optimized / DLL files
