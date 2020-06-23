@@ -1,4 +1,4 @@
-from utils import rouge_eval, rouge_log
+from utils_rouge import rouge_eval, rouge_log
 
 
 rouge_ref_dir = '../output/rouge_ref'
