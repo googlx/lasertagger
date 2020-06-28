@@ -6,7 +6,7 @@
 # https://github.com/google-research-datasets/wiki-split
 WIKISPLIT_DIR=/home/share/zh/corpus/pku_paraphrase_lasertagger
 # Preprocessed data and models will be stored here.
-OUTPUT_DIR=./logs_test
+OUTPUT_DIR=./logs
 # Download the pretrained BERT model:
 # https://storage.googleapis.com/bert_models/2018_10_18/cased_L-12_H-768_A-12.zip
 BERT_BASE_DIR=/home/share/zh/models/chinese_roberta_wwm_ext_L-12_H-768_A-12
@@ -32,12 +32,11 @@ SAVE_CHECKPOINT_STEPS=500
 TIMESTAMP=$(ls "${OUTPUT_DIR}/models/${EXPERIMENT}/export/" | \
             grep -v "temp-" | sort -r | head -1)
 SAVED_MODEL_DIR=${OUTPUT_DIR}/models/${EXPERIMENT}/export/${TIMESTAMP}
-PREDICTION_FILE=${OUTPUT_DIR}/models/${EXPERIMENT}/pred.tsv
 
 python predict_main.py \
-  --input_file=${WIKISPLIT_DIR}/validation.tsv \
+  --input_file=data/test.tsv \
   --input_format=wikisplit \
-  --output_file=${PREDICTION_FILE} \
+  --output_file=data/pred.tsv \
   --label_map_file=${OUTPUT_DIR}/label_map.txt \
   --vocab_file=${BERT_BASE_DIR}/vocab.txt \
   --saved_model=${SAVED_MODEL_DIR}
@@ -45,4 +44,4 @@ python predict_main.py \
 
 ### 5. Evaluation
 
-python score_main.py --prediction_file=${PREDICTION_FILE}
+# python score_main.py --prediction_file=${PREDICTION_FILE}
