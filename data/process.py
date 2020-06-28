@@ -1,6 +1,6 @@
 data = []
 with open('test.txt', 'r') as f:
-    for line in f.readline():
+    for line in f.readlines():
         line = line.strip()
         data.append(f'{line}\t{line}')
 
